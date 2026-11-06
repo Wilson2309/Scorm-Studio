@@ -1,0 +1,3 @@
+import {activityFilters,adminActivitiesSchema} from "@/lib/admin/contracts";
+import {adminHeaders,adminRPC,adminResponseError,guardAdmin} from "@/lib/admin/server";
+export async function GET(request:Request){const denied=await guardAdmin(request);if(denied)return denied;try{const f=activityFilters.parse(Object.fromEntries(new URL(request.url).searchParams));return Response.json(await adminRPC("admin_activities",{p_query:f.q,p_status:f.status,p_owner:f.owner??null,p_order:f.order,p_page:f.page,p_size:f.pageSize},adminActivitiesSchema),{headers:adminHeaders});}catch(e){return adminResponseError(e);}}

@@ -1,0 +1,41 @@
+import {createRequire} from 'node:module';
+import {pathToFileURL} from 'node:url';
+import {resolve,join} from 'node:path';
+import {mkdirSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url);require('./register.cjs');
+const {pdfBytes}=require('./pdf-fixture.cjs');
+const {Browser}=await import(pathToFileURL(process.env.SCORM_CDP_MODULE).href);
+const base=process.env.SCORM_TEST_URL,out=resolve('.taste-skill/phase0251/auth');mkdirSync(out,{recursive:true});
+const results={source:'Official Supabase browser SDK with local Auth/PostgREST fixture; not live Supabase RLS or SMTP.',checks:[],screens:[]};
+const browser=await Browser.launch();
+try{
+ const page=await browser.newPage();
+ const wait=async fn=>{for(let i=0;i<160;i++){if(await page.eval(fn))return;await new Promise(r=>setTimeout(r,100));}throw new Error('Timed out: '+fn.toString());};
+ const set=async(id,value)=>page.eval(({id,value})=>{const el=document.getElementById(id);Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(el,value);el.dispatchEvent(new Event('input',{bubbles:true}));},{id,value});
+ const submit=()=>page.eval(()=>document.querySelector('form').requestSubmit());
+ const shot=async(label,width)=>{await page.setViewport({width,height:1000,mobile:width<600});assert.ok(await page.eval(()=>document.documentElement.scrollWidth<=innerWidth+1),'Overflow '+label);await page.screenshot({path:join(out,`${label}-${width}.png`),fullPage:true,format:'png'});results.screens.push(`${label}-${width}.png`);};
+ async function login(email,password){await page.goto(base+'/login');await wait(()=>!!document.getElementById('email'));await set('email',email);await set('password',password);await submit();await wait(()=>!!document.querySelector('.app-header'));}
+ await page.goto(base+'/crear');await wait(()=>!!document.getElementById('email'));assert.ok((await page.eval(()=>location.pathname))==='/login');
+ for(const width of [1440,768,390])await shot('login',width);
+ await set('email','teacher-a@scorm.test');await set('password','invalid');await submit();await wait(()=>!!document.querySelector('[role=alert]'));const loginError=await page.eval(()=>({message:document.querySelector('[role=alert]').textContent,fields:[...document.querySelectorAll('.auth-fields .field-error')].map(e=>e.textContent)}));assert.ok(loginError.message.includes('correo o la contraseña'),JSON.stringify(loginError));results.checks.push('Anonymous route redirects to login; invalid credentials show controlled feedback.');
+ await page.goto(base+'/registro');await wait(()=>!!document.getElementById('fullName'));for(const width of [1440,390])await shot('register',width);
+ await set('fullName','Nueva docente');await set('email','new-teacher@scorm.test');await set('password','Local-test-password-123!');await set('confirmPassword','different');await submit();await wait(()=>!!document.getElementById('confirmPassword-error'));assert.ok(await page.eval(()=>document.getElementById('confirmPassword').getAttribute('aria-invalid')==='true'));
+ await set('confirmPassword','Local-test-password-123!');await submit();await wait(()=>[...document.querySelectorAll('[role=status]')].some(p=>p.textContent.includes('Si el correo')));assert.equal(await page.eval(()=>!!document.querySelector('.app-header')),false);results.checks.push('Registration validates confirmation, supports password managers, and shows the email-confirmation state without pretending the user is signed in.');
+ await page.goto(base+'/recuperar');await wait(()=>!!document.getElementById('email'));await set('email','teacher-a@scorm.test');await submit();await wait(()=>[...document.querySelectorAll('[role=status]')].some(p=>p.textContent.includes('Si existe')));await shot('recovery',390);results.checks.push('Recovery message does not reveal account existence. No actual email was sent by the fixture.');
+ await login('teacher-a@scorm.test','Local-test-password-123!');assert.ok((await page.eval(()=>document.querySelector('.user-label').textContent)).includes('Docente A'));
+ const file=join(out,'auth-fixture.pdf');writeFileSync(file,pdfBytes('Contenido de prueba para la memoria temporal del documento.'));
+ await wait(()=>Object.keys(document.querySelector('.studio-hero input[type=file]')??{}).some(k=>k.startsWith('__reactProps$')));
+ const {root}=await page.send('DOM.getDocument');const {nodeId}=await page.send('DOM.querySelector',{nodeId:root.nodeId,selector:'.studio-hero input[type=file]'});await page.send('DOM.setFileInputFiles',{nodeId,files:[file]});await wait(()=>!!document.querySelector('.studio-hero .selected-filename'));
+ await page.goto(base+'/crear');await wait(()=>!!document.querySelector('.app-header'));assert.ok((await page.eval(()=>document.querySelector('.user-label').textContent)).includes('Docente A'));results.checks.push('Login uses the official SDK; a full reload preserves the session and real profile identity.');
+ await page.goto(base+'/admin');await wait(()=>!!document.querySelector('.studio-hero'));assert.equal(await page.eval(()=>document.body.textContent.includes('Shell administrativo')),false);assert.equal(await page.eval(()=>!!document.querySelector('.user-popover a[href="/admin"]')),false);results.checks.push('Teacher is denied admin server-side even though editable Auth metadata claims ADMIN.');
+ await wait(()=>Object.keys(document.querySelector('.studio-hero input[type=file]')??{}).some(k=>k.startsWith('__reactProps$')));
+ const adminRoot=(await page.send('DOM.getDocument')).root;const adminInput=await page.send('DOM.querySelector',{nodeId:adminRoot.nodeId,selector:'.studio-hero input[type=file]'});await page.send('DOM.setFileInputFiles',{nodeId:adminInput.nodeId,files:[file]});await wait(()=>!!document.querySelector('.studio-hero .selected-filename'));
+ await page.eval(()=>{document.querySelector('.user-menu').open=true;document.querySelector('.user-popover button').click();});await wait(()=>!!document.getElementById('email'));assert.equal(await page.eval(()=>location.pathname),'/login');results.checks.push('Logout clears the SDK session and returns to login.');
+ await login('teacher-b@scorm.test','Local-test-password-123!');assert.ok((await page.eval(()=>document.querySelector('.user-label').textContent)).includes('Docente B'));assert.equal(await page.eval(()=>document.querySelector('.user-label').textContent.includes('Docente A')),false);await page.goto(base+'/crear');await wait(()=>!!document.querySelector('.creative-workspace'));assert.equal(await page.eval(()=>!!document.querySelector('.document-ready-label')),false);results.checks.push('Second account sees its own profile and receives no previous-account PDF session. This is UI isolation, not proof of database RLS.');
+ await page.send('Network.clearBrowserCookies');await page.goto(base+'/crear');await wait(()=>!!document.getElementById('email'));assert.equal(await page.eval(()=>location.pathname),'/login');results.checks.push('Missing session cannot reopen a protected route.');
+ await page.goto(base+'/auth/confirm?token_hash=fixture-email-hash&type=recovery');await wait(()=>!!document.getElementById('confirmPassword'));await shot('reset',390);await set('password','Changed-password-123!');await set('confirmPassword','Changed-password-123!');await submit();await wait(()=>!!document.getElementById('email'));assert.ok((await page.eval(()=>document.body.textContent)).includes('Contraseña actualizada'));results.checks.push('OTP recovery callback establishes a session; password update signs out and returns to login.');
+ await page.goto(base+'/auth/callback?code=invalid-code&next=//foreign.test');await wait(()=>!!document.getElementById('email'));assert.equal(await page.eval(()=>location.origin),base);assert.ok(!(await page.eval(()=>location.search)).includes('invalid-code'));results.checks.push('Invalid callbacks are controlled and do not retain codes or follow external return paths.');
+ await page.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await shot('reduced-motion',390);
+ results.status='PASS';console.log(JSON.stringify(results));writeFileSync(join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');
+}finally{await browser.close();}

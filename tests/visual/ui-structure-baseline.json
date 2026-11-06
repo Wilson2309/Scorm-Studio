@@ -1,0 +1,3192 @@
+{
+  "version": 1,
+  "scope": "Synthetic data, stable fonts/reduced motion, geometry tolerance 2.5% or 6px; no text/date/pixel comparison",
+  "screens": {
+    "login-1920": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 914,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-1440": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 686,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-1280": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 610,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-1024": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 488,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-768": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 384,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-390": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "login-360": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-1920": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 914,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-1440": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 686,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-1280": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 610,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-1024": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 488,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-768": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 384,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-390": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "register-360": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-1920": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 914,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-1440": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 686,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-1280": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 610,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-1024": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 488,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-768": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 384,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-390": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-recovery-360": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-1920": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 914,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-1440": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 686,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-1280": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 610,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-1024": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 488,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-768": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 384,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-390": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-expired-360": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-empty-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-empty-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-1920": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 914,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-1440": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 686,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-1280": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 610,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-1024": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 488,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-768": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 384,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-390": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "password-reset-authenticated-360": {
+      "nodes": {
+        ".login-main": {
+          "display": "flex",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1223,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 943,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1223,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 943,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-1-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 970,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 690,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 970,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 690,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1060,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 780,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1060,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 780,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "document-processing-error-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1240,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1240,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-2-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1240,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 896,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1240,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 896,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 832,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 685,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 654,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 318,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-3-cards-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".studio-type-grid": {
+          "display": "grid",
+          "width": 288,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1231,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 951,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1231,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 951,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 896,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 735,
+          "fontSize": "16px"
+        },
+        ".creation-companion": {
+          "display": "block",
+          "width": 200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-4-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 910,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 654,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 318,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "wizard-5-quiz-studio-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 288,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 1000,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 936,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 910,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 654,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 318,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "quiz-preview-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".creative-workspace-grid": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".creative-canvas": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        },
+        ".quiz-studio": {
+          "display": "block",
+          "width": 288,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-editor-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-preview-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1182,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1182,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-loading-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 841,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "history-error-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".persistent-history": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1200,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "roulette-package-ready-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".roulette-editor-layout": {
+          "display": "grid",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "dashboard-with-activities-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1240,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-overview-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-people-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-person-detail-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-role-confirmation-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 956,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 956,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-activities-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-loading-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-1920": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1920,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-1440": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1440,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 867,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-1280": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1280,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 1176,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-1024": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 1024,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 960,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-768": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 768,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 704,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-390": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 390,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 350,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "admin-error-360": {
+      "nodes": {
+        ".app-header": {
+          "display": "block",
+          "width": 360,
+          "fontSize": "16px"
+        },
+        ".admin-workspace": {
+          "display": "block",
+          "width": 320,
+          "fontSize": "16px"
+        }
+      }
+    },
+    "not-found-1920": {
+      "nodes": {}
+    },
+    "not-found-1440": {
+      "nodes": {}
+    },
+    "not-found-1280": {
+      "nodes": {}
+    },
+    "not-found-1024": {
+      "nodes": {}
+    },
+    "not-found-768": {
+      "nodes": {}
+    },
+    "not-found-390": {
+      "nodes": {}
+    },
+    "not-found-360": {
+      "nodes": {}
+    }
+  }
+}

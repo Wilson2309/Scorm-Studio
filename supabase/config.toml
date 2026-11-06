@@ -1,0 +1,16 @@
+# CLI 3.0.0: local project only. Never push this config to the hosted project.
+# Deployment uses db push --remote=<verified-ref> --skip-vault.
+# No hosted Auth, database or Ollama setting is changed by this file.
+project_id = "scorm-studio"
+
+[db]
+# Local default, not a claim about the remote server. See read-only preflight.
+major_version = 17
+
+[db.migrations]
+enabled = true
+schema_paths = []
+
+[db.seed]
+enabled = false
+sql_paths = []

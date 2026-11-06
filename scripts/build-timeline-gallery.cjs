@@ -1,0 +1,19 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
+require('../tests/register.cjs');
+const fs=require('node:fs'),path=require('node:path'),{pathToFileURL}=require('node:url');
+const out=path.resolve('artifacts/phase-04.2'),esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const head=title=>'<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+'</title><style>body{margin:28px;background:#edf4fa;color:#082b4c;font:16px/1.5 system-ui}h1{font-size:28px}h2{margin-top:32px}main{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}figure{margin:0;padding:12px;background:white;border-radius:12px}img{width:100%;height:320px;object-fit:cover;object-position:top}figcaption{margin-top:8px;font-size:14px}a{color:#00549b}@media(max-width:700px){main{grid-template-columns:1fr 1fr}}</style>';
+async function main(){
+ const sets=[['Studio baseline','../ui-recovery/phase042-before'],['Studio final','../ui-recovery/phase042-final'],['Editor','editor'],['SCORM learner','learner']].map(([label,dir])=>({label,dir,report:JSON.parse(fs.readFileSync(path.join(out,dir,'results.json'),'utf8'))}));
+ if(sets.some(s=>s.report.status!=='PASS'))throw Error('Gallery requires completed passing reports; inspect failures first.');
+ let index=head('SCORM Studio - Timeline acceptance')+'<h1>Phase 04.2 · Timeline</h1><p>Local Chrome, synthetic PDFs, local PostgreSQL/RLS and controlled Auth/Storage transports. LMS API simulated. Remote Timeline persistence and real Moodle: NOT VERIFIED.</p><p><a href="contact-1440.html">Desktop contact</a> · <a href="contact-390.html">Mobile contact</a></p><p><a href="editor/teacher-timeline-scorm12.zip">Final teacher-edited ZIP</a> · <a href="learner/chronology-scorm12.zip">Chronology ZIP</a> · <a href="learner/ordering-scorm12.zip">Process assessment ZIP</a> · <a href="learner/identification-scorm12.zip">Identification ZIP</a></p>';
+ for(const s of sets){index+='<h2>'+esc(s.label)+'</h2><p>'+s.report.status+' · '+s.report.screens.length+' captures · <a href="'+s.dir+'/results.json">Report</a></p><main>'+s.report.screens.map(i=>'<figure><a href="'+s.dir+'/'+i.file+'"><img loading="lazy" src="'+s.dir+'/'+i.file+'" alt="'+esc(i.name||i.file)+'"><figcaption>'+esc(i.name||i.file)+'</figcaption></a></figure>').join('')+'</main>';}
+ fs.writeFileSync(path.join(out,'index.html'),index);
+ for(const width of [1440,390]){
+  const images=sets.flatMap(s=>s.report.screens.filter(i=>i.viewport?.[0]===width||new RegExp('-'+width+'\\.png$').test(i.file)).map(i=>({...i,dir:s.dir,label:s.label})));
+  fs.writeFileSync(path.join(out,'contact-'+width+'.html'),head('Timeline contact '+width)+'<h1>Phase 04.2 · '+width+'px</h1><p>Top crops; open individual captures in the gallery for full inspection.</p><main>'+images.map(i=>'<figure><img src="'+i.dir+'/'+i.file+'" alt="'+esc(i.name||i.file)+'"><figcaption>'+esc(i.label+' · '+(i.name||i.file))+'</figcaption></figure>').join('')+'</main>');
+ }
+ if(process.argv.includes('--capture')){const {Browser}=await import(pathToFileURL(process.env.SCORM_CDP_MODULE||'./.cache/private/cdp.mjs').href),browser=await Browser.launch();try{const page=await browser.newPage({width:1920,height:1080});for(const width of [1440,390]){await page.goto(pathToFileURL(path.join(out,'contact-'+width+'.html')).href);await page.eval(()=>Promise.all([...document.images].map(i=>i.decode())));await page.screenshot({path:path.join(out,'contact-'+width+'.png'),format:'png',fullPage:true});}}finally{await browser.close();}}
+ console.log(JSON.stringify({gallery:'artifacts/phase-04.2/index.html',reports:sets.map(s=>({label:s.label,status:s.report.status,screens:s.report.screens.length}))}));
+}
+main().catch(e=>{console.error(e.message);process.exitCode=1;});

@@ -1,0 +1,11 @@
+-- Read-only deployment evidence. Counts/fingerprints only, never private content.
+select jsonb_build_object(
+ 'rolesFingerprint',(select md5(coalesce(string_agg(id::text||':'||role,',' order by id),'')) from public.profiles),
+ 'adminCount',(select count(*) from public.profiles where role='ADMIN'),
+ 'teacherCount',(select count(*) from public.profiles where role='TEACHER'),
+ 'policyFingerprint',(select md5(coalesce(string_agg(schemaname||':'||tablename||':'||policyname||':'||coalesce(qual,'')||':'||coalesce(with_check,''),',' order by schemaname,tablename,policyname),'')) from pg_policies where schemaname in ('public','storage')),
+ 'rows',jsonb_build_object('documents',(select count(*) from public.documents),'generations',(select count(*) from public.generations),'revisions',(select count(*) from public.quiz_revisions),'drafts',(select count(*) from public.quiz_drafts),'packages',(select count(*) from public.scorm_packages),'events',(select count(*) from public.generation_events),'storageObjects',(select count(*) from storage.objects where bucket_id in ('scorm-pdfs','scorm-packages'))),
+ 'auditExists',to_regclass('scorm_private.admin_audit') is not null,
+ 'functions',(select coalesce(jsonb_agg(jsonb_build_object('schema',n.nspname,'name',p.proname,'owner',pg_get_userbyid(p.proowner),'definer',p.prosecdef,'config',p.proconfig,'authenticatedExecute',has_function_privilege('authenticated',p.oid,'EXECUTE'),'anonExecute',has_function_privilege('anon',p.oid,'EXECUTE')) order by n.nspname,p.proname),'[]'::jsonb) from pg_proc p join pg_namespace n on n.oid=p.pronamespace where (n.nspname='public' and p.proname in ('admin_overview','admin_people','admin_activities','admin_change_role')) or (n.nspname='scorm_private' and p.proname in ('require_admin','bootstrap_admin'))),
+ 'indexes',(select coalesce(jsonb_agg(jsonb_build_object('name',indexname,'valid',i.indisvalid)),'[]'::jsonb) from pg_indexes x join pg_namespace n on n.nspname=x.schemaname join pg_class c on c.relnamespace=n.oid and c.relname=x.indexname join pg_index i on i.indexrelid=c.oid where indexname in ('admin_audit_date','generations_admin_updated','generations_admin_created','events_admin_period'))
+) as deployment_snapshot;

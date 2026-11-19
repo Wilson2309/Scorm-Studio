@@ -10,6 +10,7 @@ import {analyzeDocumentDeterministically} from "@/lib/content/deterministic-anal
 import {hybridPreparedSchema} from "@/lib/content/hybrid-schema";
 import {generateHybridQuiz,regenerateHybridQuestion} from "@/lib/content/hybrid-pipeline.server";
 
+export const maxDuration = 300;
 const requestSchema=z.discriminatedUnion("action",[
   z.object({action:z.literal("prepare"),extracted:extractedDocumentSchema}),
   z.object({action:z.literal("generateHybrid"),prepared:hybridPreparedSchema,config:quizConfigSchema}),

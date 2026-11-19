@@ -5,6 +5,7 @@ import {workspaceId} from "@/lib/workspace/contracts";
 import {quizConfigSchema} from "@/lib/quiz/schema";
 import {timelineModeSchema} from "@/lib/activities/timeline-schema";
 import {privateHeaders,workspaceService,workspaceResponseError} from "@/lib/workspace/http.server";
+export const maxDuration = 300;
 const command=z.discriminatedUnion("action",[
  z.object({action:z.literal("simulation"),expectedRevision:z.number().int().min(0),generationId:workspaceId,manual:z.boolean().default(false)}).strict(),
  z.object({action:z.literal("saveSimulation"),expectedRevision:z.number().int().min(0),activity:z.unknown()}).strict(),

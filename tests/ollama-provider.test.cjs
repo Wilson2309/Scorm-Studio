@@ -144,3 +144,67 @@ test('health diagnostics are development-only and a disconnected tunnel returns 
     global.fetch=async()=>{throw new Error('ECONNREFUSED');};const offline=await getProviderStatus();assert.equal(offline.available,false);assert.equal(offline.message,'No se pudo conectar con el servicio de IA.');assert.equal(offline.debug,undefined);
   }finally{global.fetch=originalFetch;for(const name of names)if(saved[name]===undefined)delete process.env[name];else process.env[name]=saved[name];}
 });
+
+test('authenticated HTTPS Ollama gateway validates config, keeps loopback keyless, sends Bearer and fails fast on 401',async()=>{
+  const names=['AI_PROVIDER','AI_BASE_URL','AI_MODEL','AI_FALLBACK_MODEL','OLLAMA_API_KEY','AI_API_KEY'];
+  const saved=Object.fromEntries(names.map(n=>[n,process.env[n]]));
+  const gatewayToken='synthetic-gateway-token-0123456789abcdef';
+  const fallbackToken='synthetic-fallback-token-0123456789abcdef';
+  try{
+    for(const name of names)delete process.env[name];
+    Object.assign(process.env,{AI_PROVIDER:'ollama',AI_BASE_URL:'http://127.0.0.1:11435',AI_MODEL:'qwen3:4b-instruct',OLLAMA_API_KEY:gatewayToken,AI_API_KEY:fallbackToken});
+    const local=ollamaConfig();
+    assert.equal('apiKey' in local,false);
+
+    Object.assign(process.env,{AI_BASE_URL:'https://gateway.example.com/',AI_FALLBACK_MODEL:'qwen2.5:3b'});
+    const httpsConfig=ollamaConfig();
+    assert.equal(httpsConfig.baseURL,'https://gateway.example.com');
+    assert.equal(httpsConfig.apiKey,gatewayToken);
+
+    delete process.env.OLLAMA_API_KEY;
+    assert.equal(ollamaConfig().apiKey,fallbackToken);
+
+    delete process.env.AI_API_KEY;
+    assert.throws(()=>ollamaConfig(),IntelligenceError);
+
+    for(const badToken of ['short','bad token 1234','bad\rtoken1234','bad\ntoken1234']){
+      process.env.OLLAMA_API_KEY=badToken;
+      assert.throws(()=>ollamaConfig(),IntelligenceError);
+    }
+
+    process.env.OLLAMA_API_KEY=gatewayToken;
+    for(const badUrl of ['http://gateway.example.com','https://gateway.example.com/ollama','https://gateway.example.com?x=1','https://user:pass@gateway.example.com']){
+      process.env.AI_BASE_URL=badUrl;
+      assert.throws(()=>ollamaConfig(),IntelligenceError);
+    }
+
+    process.env.AI_BASE_URL='https://gateway.example.com';
+    const calls=[],logs=[];
+    const provider=new OllamaContentIntelligenceProvider(ollamaConfig(),async(url,request)=>{
+      calls.push({url,method:request.method,headers:request.headers,redirect:request.redirect});
+      if(String(url).endsWith('/api/tags'))return Response.json({models:[{name:'qwen3:4b-instruct'},{name:'qwen2.5:3b'}]});
+      return response({ok:true},'qwen3:4b-instruct');
+    },undefined,e=>logs.push(e));
+
+    const health=await provider.healthCheck();
+    assert.equal(health.connection,true);
+    assert.equal(health.primaryInstalled,true);
+    assert.equal(calls[0].headers.Authorization,`Bearer ${gatewayToken}`);
+    assert.equal(calls[0].redirect,'error');
+
+    assert.deepEqual(await provider.checkConnectivity(),{ok:true});
+    assert.equal(calls[1].headers.Authorization,`Bearer ${gatewayToken}`);
+    assert.equal(calls[1].redirect,'error');
+    assert.equal(JSON.stringify(logs).includes(gatewayToken),false);
+
+    const authFailCalls=[];
+    const failing=new OllamaContentIntelligenceProvider(ollamaConfig(),async(url,request)=>{
+      authFailCalls.push({url,headers:request.headers});
+      return new Response('<html>401 Authorization Required</html>',{status:401,headers:{'Content-Type':'text/html'}});
+    },undefined,()=>{});
+    await assert.rejects(failing.checkConnectivity(),e=>e instanceof IntelligenceError&&!JSON.stringify(e).includes(gatewayToken));
+    assert.equal(authFailCalls.length,1);
+  }finally{
+    for(const name of names)if(saved[name]===undefined)delete process.env[name];else process.env[name]=saved[name];
+  }
+});

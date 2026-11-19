@@ -2,6 +2,7 @@ import { extractPDF } from "@/lib/pdf/extract";
 import { boundedBody, BodyTooLargeError } from "@/lib/http/bounded-body";
 import {guardRequest} from "@/lib/auth/request";
 
+export const maxDuration = 300;
 export async function POST(request: Request) {
   const denied=await guardRequest(request);if(denied)return denied;
   const length = Number(request.headers.get("content-length"));

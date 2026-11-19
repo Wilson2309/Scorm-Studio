@@ -17,7 +17,7 @@ export const OLLAMA_DEFAULTS = Object.freeze({
   timeoutMs:600_000,healthTimeoutMs:5000,temperature:0.1,topP:0.9,seed:42,
   numCtx:16384,analysisTokens:1800,quizTokens:3000,maxInputChars:24000,keepAlive:"10m",leanNumCtx:4096,leanTokens:900,
 });
-export type OllamaConfig={provider:"ollama";baseURL:string;model:string;fallbackModel?:string;timeoutMs:number;healthTimeoutMs:number;temperature:number;numCtx:number;analysisTokens:number;quizTokens:number;maxInputChars:number;keepAlive:string;leanNumCtx?:number;leanTokens?:number};
+export type OllamaConfig={provider:"ollama";baseURL:string;apiKey?:string;model:string;fallbackModel?:string;timeoutMs:number;healthTimeoutMs:number;temperature:number;numCtx:number;analysisTokens:number;quizTokens:number;maxInputChars:number;keepAlive:string;leanNumCtx?:number;leanTokens?:number};
 export type OllamaHealth={connection:boolean;primaryInstalled:boolean;fallbackInstalled:boolean;responseMs:number};
 export type OllamaAttempt={requestedModel:string;usedModel:string;returnedModel:string|null;httpStatus:number|null;fallbackUsed:boolean;formatRetry:boolean;jsonParse:"PASS"|"FAIL"|"NOT_RUN";zod:"PASS"|"FAIL"|"NOT_RUN";responseMs:number;operation:string;promptChars:number;promptBytes:number;requestedContext?:number;outputBudget?:number;metrics?:OllamaMetrics;validationIssues?:Hint[]};
 const numeric=(name:string,fallback:number,min:number,max:number,integer=true)=>{
@@ -28,7 +28,14 @@ const numeric=(name:string,fallback:number,min:number,max:number,integer=true)=>
 export function ollamaConfig():OllamaConfig {
   const baseURL=process.env.AI_BASE_URL??OLLAMA_DEFAULTS.baseURL;
   let url:URL;try{url=new URL(baseURL);}catch{throw new IntelligenceError("La dirección del servicio de IA no es válida.",503);}
-  if(!["127.0.0.1","localhost","[::1]"].includes(url.hostname)||url.protocol!=="http:"||url.username||url.password||url.search||url.hash||!['','/'].includes(url.pathname))throw new IntelligenceError("Configura la dirección loopback del servicio de IA o del túnel local.",503);
+  const isLoopback=["127.0.0.1","localhost","[::1]"].includes(url.hostname);
+  if(url.username||url.password||url.search||url.hash||!['','/'].includes(url.pathname)||!(url.protocol==="https:"||(url.protocol==="http:"&&isLoopback)))throw new IntelligenceError("Configura la dirección loopback HTTP o un gateway HTTPS autenticado del servicio de IA.",503);
+  let apiKey:string|undefined;
+  if(url.protocol==="https:"){
+    const candidate=(process.env.OLLAMA_API_KEY??"").trim()||(process.env.AI_API_KEY??"").trim();
+    if(!candidate||!/^[^\s\r\n]{8,512}$/.test(candidate))throw new IntelligenceError("Configura el token privado (OLLAMA_API_KEY) del gateway HTTPS de IA.",503);
+    apiKey=candidate;
+  }
   const model=process.env.AI_MODEL??OLLAMA_DEFAULTS.model;
   const fallbackModel=process.env.AI_FALLBACK_MODEL===undefined?OLLAMA_DEFAULTS.fallbackModel:process.env.AI_FALLBACK_MODEL.trim()||undefined;
   for(const candidate of [model,fallbackModel].filter((v):v is string=>!!v)){
@@ -36,7 +43,7 @@ export function ollamaConfig():OllamaConfig {
   }
   const keepAlive=process.env.OLLAMA_KEEP_ALIVE??OLLAMA_DEFAULTS.keepAlive;
   if(!/^(?:0|(?:[1-9]|[1-5][0-9]|60)m)$/.test(keepAlive))throw new IntelligenceError("OLLAMA_KEEP_ALIVE debe ser 0 o un plazo de 1m a 60m.",503);
-  return {provider:"ollama",keepAlive,baseURL:baseURL.replace(/\/$/,""),model,...(fallbackModel?{fallbackModel}:{}),leanNumCtx:numeric("OLLAMA_LEAN_NUM_CTX",OLLAMA_DEFAULTS.leanNumCtx,4096,32768),leanTokens:numeric("AI_LEAN_MAX_TOKENS",OLLAMA_DEFAULTS.leanTokens,500,4000),
+  return {provider:"ollama",keepAlive,baseURL:baseURL.replace(/\/$/,""),...(apiKey?{apiKey}:{}),model,...(fallbackModel?{fallbackModel}:{}),leanNumCtx:numeric("OLLAMA_LEAN_NUM_CTX",OLLAMA_DEFAULTS.leanNumCtx,4096,32768),leanTokens:numeric("AI_LEAN_MAX_TOKENS",OLLAMA_DEFAULTS.leanTokens,500,4000),
     timeoutMs:numeric("AI_TIMEOUT_MS",OLLAMA_DEFAULTS.timeoutMs,1000,600_000),healthTimeoutMs:numeric("AI_HEALTH_TIMEOUT_MS",OLLAMA_DEFAULTS.healthTimeoutMs,250,15000),
     temperature:numeric("AI_TEMPERATURE",OLLAMA_DEFAULTS.temperature,0,0.3,false),numCtx:numeric(process.env.OLLAMA_NUM_CTX!==undefined?"OLLAMA_NUM_CTX":"AI_NUM_CTX",OLLAMA_DEFAULTS.numCtx,4096,32768),
     analysisTokens:numeric("AI_ANALYSIS_MAX_TOKENS",OLLAMA_DEFAULTS.analysisTokens,256,8192),quizTokens:numeric("AI_QUIZ_MAX_TOKENS",OLLAMA_DEFAULTS.quizTokens,256,8192),
@@ -104,7 +111,7 @@ export class OllamaContentIntelligenceProvider implements ContentIntelligencePro
   async healthCheck():Promise<OllamaHealth>{
     const started=Date.now();
     try{
-      const response=await this.transport(`${this.config.baseURL}/api/tags`,{method:"GET",cache:"no-store",signal:this.signalWithTimeout(this.config.healthTimeoutMs)});
+      const response=await this.transport(`${this.config.baseURL}/api/tags`,{method:"GET",cache:"no-store",signal:this.signalWithTimeout(this.config.healthTimeoutMs),...(this.config.apiKey?{headers:{Authorization:`Bearer ${this.config.apiKey}`},redirect:"error" as const}:{})});
       if(!response.ok)return {connection:false,primaryInstalled:false,fallbackInstalled:false,responseMs:Date.now()-started};
       const data=z.object({models:z.array(z.object({name:z.string(),model:z.string().optional()})).max(500)}).parse(JSON.parse(new TextDecoder().decode(await boundedBody(response,250_000))));
       const installed=new Set(data.models.flatMap(m=>[m.name,...(m.model?[m.model]:[])]));
@@ -134,7 +141,7 @@ export class OllamaContentIntelligenceProvider implements ContentIntelligencePro
       try{
         let response:Response;
         try{
-          response=await this.transport(`${this.config.baseURL}/api/chat`,{method:"POST",headers:{"Content-Type":"application/json"},signal:timeout,
+          response=await this.transport(`${this.config.baseURL}/api/chat`,{method:"POST",headers:{"Content-Type":"application/json",...(this.config.apiKey?{Authorization:`Bearer ${this.config.apiKey}`}:{})},...(this.config.apiKey?{redirect:"error" as const}:{}),signal:timeout,
             body:JSON.stringify({model,stream:true,format:jsonSchema,keep_alive:this.config.keepAlive,
               options:{temperature:repair?0:this.config.temperature,top_p:OLLAMA_DEFAULTS.topP,seed:OLLAMA_DEFAULTS.seed,num_ctx:numCtx,num_predict:maxTokens},
               messages:[{role:"system",content:system},{role:"user",content:body}],
@@ -153,6 +160,7 @@ export class OllamaContentIntelligenceProvider implements ContentIntelligencePro
           if(this.signal?.aborted)throw new IntelligenceError("Solicitud cancelada.",499);
           if(timeout.aborted)throw new IntelligenceError("La preparación del contenido tardó más de lo esperado. Inténtalo nuevamente.",504);
           if([429,502,503].includes(response.status))throw new InferenceError("El servicio de IA está temporalmente ocupado o no tiene disponible el modelo solicitado.",503,this.diagnostic(response.status,model,"inference_unavailable"));
+          if([401,403].includes(response.status))throw new IntelligenceError("El servicio de IA rechazó la solicitud. Revisa su configuración.",502,this.diagnostic(response.status,model,"request_rejected"));
           throw new OutputError("El servicio de IA devolvió una respuesta ilegible. No se ha aceptado contenido.",null,[{path:"$",code:"invalid_envelope"}]);
         }
         event.metrics=parseOllamaMetrics(payload&&typeof payload==="object"&&"performance" in payload?payload.performance:payload);

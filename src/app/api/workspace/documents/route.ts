@@ -2,6 +2,7 @@ import {guardRequest} from "@/lib/auth/request";
 import {boundedBody} from "@/lib/http/bounded-body";
 import {workspaceId} from "@/lib/workspace/contracts";
 import {privateHeaders,workspaceService,workspaceResponseError} from "@/lib/workspace/http.server";
+export const maxDuration = 300;
 export async function POST(request:Request){
  const denied=await guardRequest(request);if(denied)return denied;
  try{
